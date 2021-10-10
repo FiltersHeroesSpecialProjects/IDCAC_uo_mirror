@@ -1,0 +1,16 @@
+name: Update mirror
+
+on:
+  workflow_dispatch: null
+  schedule:
+    - cron: "0 10,14,18 * * *"
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CI_USERNAME: "github-actions[bot]"
+        run: ./updateMirror.sh
