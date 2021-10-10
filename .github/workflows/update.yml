@@ -3,7 +3,7 @@ name: Update mirror
 on:
   workflow_dispatch: null
   schedule:
-    - cron: "0 10,14,18 * * *"
+    - cron: "0 0 15 * *"
 
 jobs:
   Update:
