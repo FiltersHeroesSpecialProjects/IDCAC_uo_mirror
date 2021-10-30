@@ -10,12 +10,12 @@ function _id(s) {
 var _i = setInterval(function() {
 	var html = _sl('html');
 	
-	if (!html || /idc8_332/.test(html.className))
+	if (!html || /idc8_334/.test(html.className))
 		return;
 	
 	clearInterval(_i);
 	
-	html.className += ' idc8_332';
+	html.className += ' idc8_334';
 	
 	var c = 0, l = document.location, i = setInterval(function() {
 		
@@ -45,9 +45,13 @@ var _i = setInterval(function() {
 			
 			var container = _sl('div[aria-modal="true"][style*="block"]');
 			
-			if (container && _sl('a[href*="policies.google.com/technologies/cookies"]', container))
+			if (container && _sl('a[href*="policies.google.com/technologies/cookies"]', container)) {
 				_sl('button + button', container).click();
-			
+				
+				// Autofocus on the search field
+				e = _sl('form[role="search"][action="/search"]:not([id]) input[aria-autocomplete="both"]');
+				if (e) e.focus();
+			}
 			
 			// General privacy reminder
 			e = _sl('form[action^="/signin/privacyreminder"] > div > span > div:not([role]) > div:not([tabindex]) span + div');

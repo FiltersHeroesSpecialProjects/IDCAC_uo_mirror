@@ -4,7 +4,8 @@
 		'.message-container': [
 			'.sp_choice_type_12',
 			'.sp_choice_type_SAVE_AND_EXIT',
-			'div:only-of-type > .sp_choice_type_ACCEPT_ALL'
+			'div:only-of-type > .sp_choice_type_ACCEPT_ALL',
+			'.privacy-manager-tcfv2 + div > .sp_choice_type_ACCEPT_ALL'
 		],
 		
 		'.mfp-wrap.mfp-ready': [
@@ -18,7 +19,8 @@
 		
 		'.reveal-overlay[style*="block"]': [
 			'[data-cookieman-save]:not([data-cookieman-accept-all]):not(.hide)',
-			'#CookieModalStrictOnlyLink'
+			'#CookieModalStrictOnlyLink',
+			'#dsgvoLayer[style*="block"] #dsgvo_deny'
 		],
  
 		'.fancybox-opened': [
@@ -85,7 +87,10 @@
 			'.cookie-manager-save',
 			'.adapt-cookies .js-save-preferences',
 			'#btnDeny.js-gdpr-submit',
-			'#manageCookies ~ #confirmCookies'
+			'#manageCookies ~ #confirmCookies',
+			'a[href*="acceptOnlyEssentinal"]',
+			'.modal-cookie #submitSelected',
+			'#btn_cookie_save'
 		]
 	};
 	
@@ -102,6 +107,7 @@
 		.js-cookiewall #sel-test-accept-cookies-button,\
 		#mpo[style*="block"] .submit.modal-privacy__btn[onclick*="privacyframe.accept"],\
 		.lightbox--cookie-consent .btn-cta,\
+		.lightbox.cookie-consent .cookie-consent-button-decline,\
 		.js-modal-gdpr.is-active .btn[data-level="2"],\
 		#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,\
 		#cookieNotificationModal.in .btn.accept-cookie,\
@@ -199,7 +205,6 @@
 		#ccc[open] #ccc-recommended-settings,\
 		form[action*="cookiewall"] .button-accept-cookies,\
 		#dtcookie-container.is-on .dtcookie__accept,\
-		#js-cookiesettingsmodale[style*="block"] #js-cookiesettingsmanager_isok,\
 		.approve-btn[href*="setCookieAndRedirect"],\
 		button[data-qa-entity="cookies.button"],\
 		#_evidon_banner[style*="flex"] #_evidon-accept-button,\
@@ -445,10 +450,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_332/.test(html.className))
+		if (!html || /idc0_334/.test(html.className))
 			return;
 		
-		html.className += ' idc0_332';
+		html.className += ' idc0_334';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);

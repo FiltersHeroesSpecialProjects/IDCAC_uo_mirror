@@ -161,17 +161,14 @@ function getE(h)
 		case 'virustotal.com': return ['euConsent=1', 'tosChangedAccepted=1'];
 		case 'cmore.se': return ['cookieBannerDismissed=true'];
 		case 'choosist.com': return ['accept_cookie=1'];
-		case 'depop.com': return ['bisc__ack=1'];
 		case 'kufar.by': return ['ck=1'];
 		case 'ezys.lt': return ['cookie-consent=3'];
 		case 'kalenderwoche.de': return ['cookiepolicy=0'];
 		case 'poolia.se': return ['cookiePolicyAccepted=1']; // jobb
 		case 'researchgate.net': return ['cc=1', 'cookieconsent_dismissed=true'];
-		case 'curiositystream.com': return ['gdpr_opt_out=0'];
 		case 'cindicator.com': return ['accepted_cookie=true'];
 		case 'kitchenplanner.ikea.com': return ['EnableGlobalLicenseAgreement=2015-04-01', 'HideCookieAgreementBanner=true'];
 		case 'atro-provita.de': return ['cookieconsent=true'];
-		case 'tv.nu': return ['gdprNotice=1'];
 		case 'unicheck.com': return ['unicheck-accepted-cookies=true'];
 		case 'meteoblue.com': return ['privacysettings=["required"]'];
 		case 'gberardi.com': return ['cookie_notify=true'];
@@ -181,7 +178,6 @@ function getE(h)
 		case 'business.google.com': return ['isCookieWarningAccepted=true']; // e
 		case 'aktion.mercedes-benz.de': return ['cookiePolicy=accepted'];
 		case 'willitclassic.com': return ['GDPR:accepted=true'];
-		case 'tommy.com': return ['PVH_COOKIES_GDPR=Accept'];
 		case 'byggshop.se': return ['showCookieWarning=false'];
 		case 'blockstack.org': return ['cookiesBanner=ACCEPTED'];
 		case 'mypolacy.de': return ['rCoo=1'];
@@ -200,7 +196,6 @@ function getE(h)
 		case 'e-horyzont.pl': return ['user_allowed_save_cookie_m2=%7B%221%22%3A1%7D'];
 		case 'lonewolfonline.net': return ['visited=yes'];
 		case 'bookchoice.com': return ['cookie-policy-accepted=true'];
-		case 'smule.com': return ['smule_cookie_banner_disabled=true'];
 		case 'codementor.io': return ['cm-general_cookie-consent=true'];
 		case 'e-syntagografisi.gr': return ['cookieconsent_status=1']; // /p-rv/p
 		case 'krone.at': return ['krn_consent_shown=1'];
@@ -264,7 +259,6 @@ function getE(h)
 		case 'cleanairgm.com': return ['cleanair=%7B%22cookiesEssential%22%3Atrue%7D'];
 		case 'e-fundresearch.com': return ['cookieinfo={%22functional%22:true}'];
 		case 'systembolaget.se': return ['cookieConsent=[%22statistical%22%2C%22profiling%22%2C%22useful%22]'];
-		case 'maisons-phenix.com': return ['cookie-agreed-categories=%5B%22essentiels%22%5D', 'cookie-agreed=1'];
 		case 'elkem.com': return ['ConsentClosed=1'];
 		case 'tonershop.at': return ['cc_granted=true'];
 		case 'verce.me': return ['verceCookieApproved=true'];
