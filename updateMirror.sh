@@ -7,6 +7,7 @@ cd ./src || exit
 wget "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=49.0&acceptformat=crx3&x=id%3Dfihnjjcciajhdojfnbdddfaoknhalnja%26installsource%3Dondemand%26uc" -O "IDCAC.crx"
 unzip -o ./IDCAC.crx
 rm -rf ./IDCAC.crx
+rm -rf ./_metadata
 git config --global user.name "${CI_USERNAME}"
 git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 GIT_SLUG=$(git ls-remote --get-url | sed "s|https://||g" | sed "s|git@||g" | sed "s|:|/|g")
