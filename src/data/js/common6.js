@@ -152,7 +152,6 @@ function getE(h)
 		case 'hetzner.com': return ['cookies_allowed=1']; // accounts
 		case 'ing.nl': return ['cookiepref=1'];
 		case 'ing.be': return ['cookiesOptin=true'];
-		case 'eneba.com': return ['cconsent=1'];
 		case 'wallpaperup.com': return ['wup_jwt=1'];
 		case 'antyweb.pl': return ['aw-privacy-approval=true']; // zeropln
 		case 'archief.amsterdam': return ['verklaring=1'];
@@ -198,7 +197,6 @@ function getE(h)
 		case 'bookchoice.com': return ['cookie-policy-accepted=true'];
 		case 'codementor.io': return ['cm-general_cookie-consent=true'];
 		case 'e-syntagografisi.gr': return ['cookieconsent_status=1']; // /p-rv/p
-		case 'krone.at': return ['krn_consent_shown=1'];
 		case 'werkenbijhanos.nl': return ['cd=1'];
 		case 'mondo-tech.it': return ['accettacookie=ok'];
 		case 'decrypt.co': return ['GDPR_Settings=%7B%22doNotTrack%22%3Afalse%7D'];
@@ -288,8 +286,9 @@ function getE(h)
 		case 'turboimagehost.com': return ['cookiewarn=1'];
 		case 'mubi.com': return ['mubi-cookie-consent=allow'];
 		case 'ersatzteilshop.de': return ['cookie-preference=1'];
-		case 'svenskaspel.se': return ['cookie_consent={\"ad\":false,\"personalized\":false,\"analytics\":false,\"provision\":false,\"version\":1}'];
+		case 'svenskaspel.se': return ['cookie_consent={\"ad\":false,\"personalized\":false,\"analytics\":false,\"provision\":false,\"version\":2}'];
 		case 'restegourmet.de': return ['consent_accepted=1'];
+		case 'cire.pl': return ['APP_COOKIES_POLICY=true', 'APP_COOKIES_TERMS_AND_CONDITIONS=true'];
 	}
 	
 	

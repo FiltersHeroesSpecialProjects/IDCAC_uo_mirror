@@ -14,7 +14,8 @@
 			'#cookiebanner .button-row > :not(.consentToAll)',
 			'#cookiebanner .confirmSelection',
 			'#cookieConsent .btn[data-cookie="accepted"]',
-			'.avia-cookie-close-bar'
+			'.avia-cookie-close-bar',
+			'.cookies-save-and-close-btn'
 		],
 		
 		'.reveal-overlay[style*="block"]': [
@@ -22,18 +23,26 @@
 			'#CookieModalStrictOnlyLink',
 			'#dsgvoLayer[style*="block"] #dsgvo_deny'
 		],
- 
-		'.fancybox-opened': [
-			'.bcGDPR .bcOpenPrivacySettings',
-			'.bcGDPR .bcRadioRefuse',
-			'.bcGDPR #bcSubmitConsent',
-			'.bcGDPR .bcpConsentCancelButton'
+		
+		'.cc-window:not(.cc-invisible)': [
+			'.cc-checkboxes-container .cc-allow',
+			'.cc-privacy-settings .cc-privacy-settings-compliance:last-child .cc-btn',
+			'.accept-as-is'
 		],
- 
+		
+		'.fancybox-lock': [
+			'.fancybox-opened .bcGDPR .bcOpenPrivacySettings',
+			'.fancybox-opened .bcGDPR .bcRadioRefuse',
+			'.fancybox-opened .bcGDPR #bcSubmitConsent',
+			'.fancybox-opened .bcGDPR .bcpConsentCancelButton',
+			
+			'.fancybox-opened.cookie-gdpr-wrap .btn[data-action="deny-all"]'
+		],
+		
 		'.fancybox-is-open': [
-			'#cookieModal .btn[data-type="required"]'
+			'#cookie-consent .cc-page-2 #cc-set-cookie'
 		],
- 
+		
 		'.pum-open': [
 			'.pum-active[data-popmake*="slug\\":\\"cookie"] .pum-close',
 			'.pum-active[data-popmake*="rodo"] .pum-close',
@@ -55,7 +64,10 @@
 			'#cookie-control-modal[style*="block"] .js-toggle-cookie-control',
 			'.kmt-ckextmodal[style*="block"] .btn[href*="accept"]',
 			'.cookie-alert[style*="block"] .btn-info[data-dismiss]',
-			'#cookiesplus-bas[style*="block"] .btn[name="save-basic"]'
+			'#cookiesplus-bas[style*="block"] .btn[name="save-basic"]',
+			'#mndCookieModal[style*="block"] ~ .modal .mnd-btn-save-settings',
+			'#modal-cookie-notice[style*="block"] .accept-settings',
+			'.modal.show button[id*="cookie-consent-accept-selected"]'
 		],
 		
 		'.modal[style*="block"]': [
@@ -83,6 +95,7 @@
 			'button[data-tracking="ACCEPT_REQUIRED_COOKIES"]',
 			'#aceptarCookiesObligatorias',
 			'.btn[href="#cookieman-settings"]',
+			'[data-cookieman-settings-trigger-button]',
 			'[data-cookieman-save]:not([data-cookieman-accept-all]):not([style*="none"])',
 			'.cookie-manager-save',
 			'.adapt-cookies .js-save-preferences',
@@ -90,7 +103,12 @@
 			'#manageCookies ~ #confirmCookies',
 			'a[href*="acceptOnlyEssentinal"]',
 			'.modal-cookie #submitSelected',
-			'#btn_cookie_save'
+			'#btn_cookie_save',
+			'.btn[onclick*="SetEssentialCookies"]',
+			'#cookie-consent-button-submit-selection',
+			'.btn[data-bind*="modal.cookie_consent.save"]',
+			'button[id*="cookie-consent-accept-selected"]',
+			'.cookieselection-confirm-selection'
 		]
 	};
 	
@@ -111,7 +129,6 @@
 		.js-modal-gdpr.is-active .btn[data-level="2"],\
 		#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,\
 		#cookieNotificationModal.in .btn.accept-cookie,\
-		.cc-grower .cc-banner:not(.cc-invisible) .cc-dismiss,\
 		.has-ccwindow .cc-compliance .cc-dismiss,\
 		.ds2-cookie-disclaimer--slidedown .ds2-cookie-disclaimer-js--submit,\
 		#mdlCookieCompliance.in .cookieClose,\
@@ -136,7 +153,6 @@
 		.cookie-compliance-modal.in .btn-primary,\
 		.cookieconsent.show .btn[data-dm*="accept"],\
 		.cookie-wall-modal.in .btn.ja,\
-		.cc-window.cc-banner:not(.cc-invisible) .cc-allow,\
 		#ccm_notification .ccm_col_content_cookieitem-radiowrap .ccm_col_content_cookieitem-radio:first-child input,\
 		#ccm_notification .ccm_btn,\
 		#modal-consent.in .modal-consent-accept,\
@@ -182,11 +198,11 @@
 		#GDPR.overlayBox .menuButton,\
 		#cookiebar .cookie-selection-button.accept,\
 		.modal.in .btn.close-modal-cookie,\
-		.gdprModal--visible #accept-all-gdpr,\
 		#consent-module[style*="block"] #consent-module-text-button,\
 		.modal #consentButton,\
 		#consent-modal[style*="block"] .lm_modal__modal__content__body__buttons__ok,\
 		.cookiesOverlay3Box #cookiesConsentOK,\
+		.bemCookieOverlay--activePopup .bemCookieOverlay__btn--save,\
 		#cookieNoticeModal.vrm-reveal[style*="block"] .vrm-reveal__icon--close',
 		
 		'#cookie-modal.in .btn[onclick*="setCookie"],\
@@ -225,7 +241,6 @@
 		button#cookies-accept-button,\
 		#cmp-message .cmp-button[onclick*="cookieAccept"],\
 		#ppms_cm_agree-to-all,\
-		.ccc-notify-buttons .ccc-notify-button[onclick*="Accept"],\
 		.template-gdpr .gdpr[data-api*="onetrust.com"] .gdpr-form .btn,\
 		.dialog .cookie-banner__btn-accept,\
 		button#btn-accept-consent,\
@@ -287,7 +302,6 @@
 		#js-cookie-wall[style*="block"] #js-cookie-wall-accept,\
 		#termsandconds.in #acceptterms,\
 		.ui-dialog.open #CookiePopup form .btn,\
-		.cc-window.cc-type-opt-in:not(.cc-invisible) .cc-allow,\
 		#modalCookie.show .cookie-accept,\
 		#cookieform input.modal__submit,\
 		#accept_koe.btn,\
@@ -420,6 +434,11 @@
 									chrome.runtime.sendMessage({command: "cookie_warning_dismissed", url: document.location.href});
 								
 								button.click();
+								
+								setTimeout(function() {
+									if (button) button.click();
+								}, 500);
+								
 								timeoutDuration += 500;
 							}
 						});
@@ -435,6 +454,11 @@
 						chrome.runtime.sendMessage({command: "cookie_warning_dismissed", url: document.location.href});
 					
 					e.click();
+					
+					setTimeout(function() {
+						if (e) e.click();
+					}, 500);
+					
 					timeoutDuration += 500;
 				}
 			});
@@ -450,10 +474,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_334/.test(html.className))
+		if (!html || /idc0_335/.test(html.className))
 			return;
 		
-		html.className += ' idc0_334';
+		html.className += ' idc0_335';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);

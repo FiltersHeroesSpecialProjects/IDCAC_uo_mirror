@@ -2,11 +2,11 @@ function getItem(h)
 {
 	switch (h)
 	{
+		case 'gettr.com': return {strict: true, key: 'cookieAccepted', value: 'true'};
 		case 'eqmac.app': return {strict: false, key: 'EQM_PRIVACY_CONSENT_CHOSEN', value: 'true'};
 		case 'figuya.com': return {strict: false, key: 'cookie-dialog', value: 'closed'};
 		case 'scoodleplay.be': return {strict: false, key: 'scoodleAllowCookies', value: 'true'};
 		case 'lifesum.com': return {strict: false, key: 'accepted-cookies', value: '[]'};
-		case 'm.aliexpress.com': return {strict: false, key: 'MSITE_GDPR', value: 'true'};
 		case 'programmitv.it': return {strict: false, key: 'privacy_choices_made', value: 'OK'};
 		case 'nexus.gg': return {strict: true, key: 'cookie-notice:accepted', value: 'true'};
 		case 'streamelements.com': return {strict: true, key: 'StreamElements.gdprNoticeAccepted', value: 'true'};
