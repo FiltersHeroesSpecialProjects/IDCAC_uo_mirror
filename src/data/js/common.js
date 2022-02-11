@@ -1,6 +1,19 @@
 (function() {
-	
+
 	let searchPairs = {
+		'#usercentrics-root': [
+			'div[data-testid="uc-buttons-container"] > button:first-child'
+		],
+		
+		'#onetrust-consent-sdk': [
+			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) ~ #onetrust-pc-sdk .ot-pc-refuse-all-handler',
+			'#onetrust-banner-sdk:not([style*="none"]) .ot-pc-refuse-all-handler',
+			'#onetrust-banner-sdk:not([style*="none"]) #onetrust-reject-all-handler',
+			
+			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) + #onetrust-banner-sdk #onetrust-button-group-parent:not(.has-reject-all-button) #onetrust-pc-btn-handler',
+			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) ~ #onetrust-pc-sdk .onetrust-close-btn-handler:first-child'
+		],
+		
 		'.message-container': [
 			'.sp_choice_type_12',
 			'.sp_choice_type_SAVE_AND_EXIT',
@@ -36,7 +49,8 @@
 			'.fancybox-opened .bcGDPR #bcSubmitConsent',
 			'.fancybox-opened .bcGDPR .bcpConsentCancelButton',
 			
-			'.fancybox-opened.cookie-gdpr-wrap .btn[data-action="deny-all"]'
+			'.fancybox-opened.cookie-gdpr-wrap .btn[data-action="deny-all"]',
+			'.fancybox-opened #cookie-consent button[data-accept="minimum"]'
 		],
 		
 		'.fancybox-is-open': [
@@ -108,7 +122,14 @@
 			'#cookie-consent-button-submit-selection',
 			'.btn[data-bind*="modal.cookie_consent.save"]',
 			'button[id*="cookie-consent-accept-selected"]',
-			'.cookieselection-confirm-selection'
+			'.cookieselection-confirm-selection',
+			'#cookie-consent-acceptRequired',
+			'.b-cookie-consent .js-cookie-decline',
+			'.cookie-consent-option-icon[ng-click*="required"]',
+			'#saveCookieOnlyMandatory',
+			'#privacycard-options #accsel',
+			'#AcceptOnlyFunctional',
+			'.js-accept-necessary-btn'
 		]
 	};
 	
@@ -188,7 +209,6 @@
 		.cookiehint .btn.cookieagree,\
 		#cookiealert .modal.in .btn[href*="accept"],\
 		#lml-data-consent-accept,\
-		#privacymodal.in #accall,\
 		#CBCookieMsg.in .btn[onclick*="approveCookies"],\
 		#cookiewall-container .button[name="submit"],\
 		#cookie_disclaimer.in .cookie_disclaimer_button,\
@@ -289,7 +309,7 @@
 		#btnAcceptCookies,\
 		form[name="cookieconsent"] input[name="consent"],\
 		.cookie-consent .box__button,\
-		.modal #cookiewarning .button--accept,\
+		.modal #cookiewarning .button--decline,\
 		.modal-cookie .btn[onclick*="setCookiepopup"],\
 		.cookie-wall__button button,\
 		#notification-allowCookies button,\
@@ -426,7 +446,7 @@
 			document.querySelectorAll(searchPairsJoinedKeys).forEach(function(box) {
 				searchPairsKeys.forEach(function(selector) {
 					if (box.matches(selector)) {
-						box.querySelectorAll(searchPairs[selector].join(',')).forEach(function(button) {
+						(box.shadowRoot || box).querySelectorAll(searchPairs[selector].join(',')).forEach(function(button) {
 							if (button.click && !button.classList.contains('idcac')) {
 								button.classList.add('idcac');
 								
@@ -468,16 +488,16 @@
 		
 		}, timeoutDuration);
 		
-		timeoutDuration += 20;
+		timeoutDuration += 50;
 	}
 	
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_335/.test(html.className))
+		if (!html || /idc0_336/.test(html.className))
 			return;
 		
-		html.className += ' idc0_335';
+		html.className += ' idc0_336';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);
