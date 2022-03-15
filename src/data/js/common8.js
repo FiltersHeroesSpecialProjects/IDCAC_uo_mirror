@@ -10,12 +10,12 @@ function _id(s) {
 var _i = setInterval(function() {
 	var html = _sl('html');
 	
-	if (!html || /idc8_336/.test(html.className))
+	if (!html || /idc8_337/.test(html.className))
 		return;
 	
 	clearInterval(_i);
 	
-	html.className += ' idc8_336';
+	html.className += ' idc8_337';
 	
 	var c = 0, l = document.location, i = setInterval(function() {
 		
@@ -40,6 +40,17 @@ var _i = setInterval(function() {
 					e.click();
 			}
 		}
+		
+		
+		// https://www.google.com/finance/
+		
+		else if (l.hostname == 'ogs.google.com' && l.pathname == '/widget/callout') {
+			if (document.evaluate('//span[contains(text(), "This site uses cookies")]', document, null, XPathResult.ANY_TYPE, null).iterateNext()) {
+				_sl('button').click();
+				c = 299;
+			}
+		}
+		
 		else {
 			// The latest cookie popup, desktop and mobile
 			

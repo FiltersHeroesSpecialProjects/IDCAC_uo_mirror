@@ -87,7 +87,6 @@ function getE(h)
 		case 'onmsft.com': return ['euconsent=1'];
 		case 'modelle-hamburg.de': return ['privacypolicy1=1'];
 		case 'lubimyczytac.pl': return ['rodoInfo_v_11=1'];
-		case 'twitter.com': return ['eu_cn=1'];
 		case 'fightful.com': return ['gdpr_popup_hide=checked'];
 		case 'foodetective.co': return ['cookiesAgreement=accepted'];
 		case 'hrkgame.com': return ['gdpralert=done'];
@@ -233,7 +232,6 @@ function getE(h)
 		case 'baukobox.de': return ['bb_dsgvo=true'];
 		case 'delta.app': return ['cookie-consent-given=true'];
 		case 'kayak.fr': return ['DATA_CONSENT=false'];
-		case 'x-kom.pl': return ['cookieAccept=true'];
 		case 'theathletic.com': return ['cookie-policy-accept=0', 'cookie-policy-optout=analyticaltracking'];
 		case 'kayak.co.uk': return ['DATA_CONSENT=true'];
 		case 'mymoria.de': return ['gatsbyConsentMandatory=true'];
@@ -250,6 +248,7 @@ function getE(h)
 		case 'svenskaspel.se': return ['cookie_consent={\"ad\":false,\"personalized\":false,\"analytics\":false,\"provision\":false,\"version\":2}'];
 		case 'restegourmet.de': return ['consent_accepted=1'];
 		case 'cire.pl': return ['APP_COOKIES_POLICY=true', 'APP_COOKIES_TERMS_AND_CONDITIONS=true'];
+		case 'x-kom.pl': return ['trackingPermissionValueCookie=false'];
 	}
 	
 	

@@ -1,17 +1,23 @@
 (function() {
 
 	let searchPairs = {
+		'.wp-exclude-emoji': [
+			'div[id^="bnnr"] > div[style*="; order: 1"] span',
+			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 2"] span',
+			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"]'
+		],
+		
 		'#usercentrics-root': [
 			'div[data-testid="uc-buttons-container"] > button:first-child'
 		],
 		
 		'#onetrust-consent-sdk': [
-			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) ~ #onetrust-pc-sdk .ot-pc-refuse-all-handler',
+			'.onetrust-pc-dark-filter:not([class*="hide"]):not([style*="none"]) ~ #onetrust-pc-sdk .ot-pc-refuse-all-handler',
 			'#onetrust-banner-sdk:not([style*="none"]) .ot-pc-refuse-all-handler',
 			'#onetrust-banner-sdk:not([style*="none"]) #onetrust-reject-all-handler',
 			
-			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) + #onetrust-banner-sdk #onetrust-button-group-parent:not(.has-reject-all-button) #onetrust-pc-btn-handler',
-			'.onetrust-pc-dark-filter:not(.ot-hide):not([style*="none"]) ~ #onetrust-pc-sdk .onetrust-close-btn-handler:first-child'
+			'.onetrust-pc-dark-filter:not([class*="hide"]):not([style*="none"]) + #onetrust-banner-sdk #onetrust-button-group-parent:not(.has-reject-all-button) #onetrust-pc-btn-handler',
+			'.onetrust-pc-dark-filter:not([class*="hide"]):not([style*="none"]) ~ #onetrust-pc-sdk .onetrust-close-btn-handler:first-child'
 		],
 		
 		'.message-container': [
@@ -129,7 +135,10 @@
 			'#saveCookieOnlyMandatory',
 			'#privacycard-options #accsel',
 			'#AcceptOnlyFunctional',
-			'.js-accept-necessary-btn'
+			'.js-accept-necessary-btn',
+			'#cookies-reject-btn',
+			'#ccAcceptOnlyFunctional',
+			'.cookie-accept-selection'
 		]
 	};
 	
@@ -494,10 +503,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_336/.test(html.className))
+		if (!html || /idc0_337/.test(html.className))
 			return;
 		
-		html.className += ' idc0_336';
+		html.className += ' idc0_337';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);
