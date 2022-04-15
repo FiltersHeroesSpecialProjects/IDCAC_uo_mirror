@@ -21,10 +21,9 @@
 		],
 		
 		'.message-container': [
-			'.sp_choice_type_12',
+			'button.sp_choice_type_12',
 			'.sp_choice_type_SAVE_AND_EXIT',
-			'div:only-of-type > .sp_choice_type_ACCEPT_ALL',
-			'.privacy-manager-tcfv2 + div > .sp_choice_type_ACCEPT_ALL'
+			'div:not(.header) > .sp_choice_type_11:only-of-type:not(:only-child)'
 		],
 		
 		'.mfp-wrap.mfp-ready': [
@@ -47,6 +46,12 @@
 			'.cc-checkboxes-container .cc-allow',
 			'.cc-privacy-settings .cc-privacy-settings-compliance:last-child .cc-btn',
 			'.accept-as-is'
+		],
+		
+		'#__tealiumGDPRecModal': [
+			'#privacy_pref_optin',
+			'#consent_prompt_submit',
+			'.container-cookie-modal-footer-refuse'
 		],
 		
 		'.fancybox-lock': [
@@ -97,7 +102,7 @@
 			'#btn-configure-cookies',
 			'#user_cookies_form_save + #refuse-all-cookies',
 			
-			'#cookieConsentAcceptOnlyFunctional',
+			'#ccSettingButton + button[id*="AcceptOnlyFunctional"]',
 			'.cookie_actions .btn[onclick*="saveBasic"]',
 			'#btnCookieSettingsSaveSettings',
 			'#cookie-setselected',
@@ -134,20 +139,20 @@
 			'.cookie-consent-option-icon[ng-click*="required"]',
 			'#saveCookieOnlyMandatory',
 			'#privacycard-options #accsel',
-			'#AcceptOnlyFunctional',
 			'.js-accept-necessary-btn',
 			'#cookies-reject-btn',
-			'#ccAcceptOnlyFunctional',
-			'.cookie-accept-selection'
+			'.cookie-accept-selection',
+			'#cookieconsent_essentiell',
+			'#button-cookie-individual-save',
+			'#cookiesModalRefuse',
+			'#declineCookieButton'
 		]
 	};
 	
 	let searchGroups = [
 		'.qc-cmp2-summary-buttons button[mode="secondary"],\
 		.qc-cmp2-buttons-desktop > button:first-child,\
-		#accept_consent_box a[onclick*="_sp_.loadPrivacyManagerModal"],\
-		.OffsetContainer div[data-component="ConsentLayer"] a[href="#sp_privacy_manager"],\
-		#didomi-host .didomi-button-highlight:not([class*="paywall"]),\
+		#didomi-popup .didomi-button-highlight:not([class*="paywall"]),\
 		#CookieModal.in .btn[data-dismiss],\
 		#rgpd_video .rgpd-mask a[data-rgpd-consent],\
 		.js--modal[style*="block"] .cookie-permission--accept-button,\
@@ -284,9 +289,6 @@
 		.ReactModal__Overlay--after-open .cookie-notice button + button,\
 		.ReactModal__Overlay--after-open .UPM__PrivacyModal button[type="submit"],\
 		.privacyInformationDiv .cookie-agree,\
-		#__tealiumGDPRecModal #privacy_pref_optin,\
-		#__tealiumGDPRecModal #consent_prompt_submit,\
-		#__tealiumGDPRcpPrefs #selectAllCheckboxes,\
 		.modal.fade.in #acceptCookie,\
 		.button[value="accept-all"][data-gtm="basic-consent/accept-all/button"],\
 		#js-modal-consent .js-consent-accept,\
@@ -503,10 +505,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_337/.test(html.className))
+		if (!html || /idc0_338/.test(html.className))
 			return;
 		
-		html.className += ' idc0_337';
+		html.className += ' idc0_338';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);

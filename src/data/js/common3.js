@@ -2,7 +2,7 @@ function getItem(h)
 {
 	switch (h)
 	{
-		case 'gettr.com': return {strict: true, key: 'cookieAccepted', value: 'true'};
+		case 'ants.gouv.fr': return {strict: true, key: 'cookieConsent', value: 'true'};
 		case 'eqmac.app': return {strict: false, key: 'EQM_PRIVACY_CONSENT_CHOSEN', value: 'true'};
 		case 'figuya.com': return {strict: false, key: 'cookie-dialog', value: 'closed'};
 		case 'scoodleplay.be': return {strict: false, key: 'scoodleAllowCookies', value: 'true'};
@@ -12,6 +12,14 @@ function getItem(h)
 		case 'streamelements.com': return {strict: true, key: 'StreamElements.gdprNoticeAccepted', value: 'true'};
 		
 		case 'phoenix.de': return {strict: false, key: 'user_anonymous_profile', value: '{"config":{"tracking":false,"userprofile":false,"youtube":false,"twitter":false,"facebook":false,"iframe":false,"video":{"useSubtitles":false,"useAudioDescription":false}},"votings":[],"msgflash":[],"history":[]}'};
+		
+		case 'play.hbomax.com':
+			return [
+				{strict: true, key: 'Gate_privacy_consent', value: '{hasConsented:true}'},
+				{strict: true, key: 'dataservices.PreferencesManager.functionalCookies', value: 'off'},
+				{strict: true, key: 'dataservices.PreferencesManager.performanceCookies', value: 'off'},
+				{strict: true, key: 'dataservices.PreferencesManager.targetingCookies', value: 'off'}
+			];
 		
 		case 'klarna.com':
 			return [

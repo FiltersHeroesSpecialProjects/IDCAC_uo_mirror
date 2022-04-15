@@ -249,6 +249,7 @@ function getE(h)
 		case 'restegourmet.de': return ['consent_accepted=1'];
 		case 'cire.pl': return ['APP_COOKIES_POLICY=true', 'APP_COOKIES_TERMS_AND_CONDITIONS=true'];
 		case 'x-kom.pl': return ['trackingPermissionValueCookie=false'];
+		case 'sachsenenergie.de': return ['cookiesAccepted=true'];
 	}
 	
 	

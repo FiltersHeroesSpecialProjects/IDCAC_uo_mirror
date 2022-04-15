@@ -41,21 +41,9 @@
 				});
 			}
 			
+			// Give up
 			else {
-				// Twitter
-				document.querySelectorAll('.twitter-tweet-rendered:not(.' + classname + ')').forEach(function(e) {
-					if (!e.shadowRoot) {
-						e.className += ' ' + classname;
-						return;
-					}
-					
-					var button = e.shadowRoot.querySelector('.js-interstitial:not(.u-hidden) .js-cookieConsentButton');
-					
-					if (button) {
-						e.className += ' ' + classname;
-						button.click();
-					}
-				});
+				return;
 			}
 			
 			searchEmbeds();
