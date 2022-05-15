@@ -10,12 +10,12 @@ function _id(s) {
 var _i = setInterval(function() {
 	var html = _sl('html');
 	
-	if (!html || /idc8_338/.test(html.className))
+	if (!html || /idc8_340/.test(html.className))
 		return;
 	
 	clearInterval(_i);
 	
-	html.className += ' idc8_338';
+	html.className += ' idc8_340';
 	
 	var c = 0, l = document.location, i = setInterval(function() {
 		
@@ -23,7 +23,7 @@ var _i = setInterval(function() {
 		
 		if (l.hostname.split('.')[0] == 'consent') {
 			if (l.pathname == '/m') {
-				e = _sl('form[action*="//consent."][action$="/s"] button');
+				e = _sl('form[action*="//consent."][action$="/s"] button, form[action*="//consent."][action$="/save"] button');
 				
 				if (e)
 					e.click();
@@ -62,6 +62,8 @@ var _i = setInterval(function() {
 				// Autofocus on the search field
 				e = _sl('form[role="search"][action="/search"]:not([id]) input[aria-autocomplete="both"]');
 				if (e) e.focus();
+				
+				c = 299;
 			}
 			
 			// General privacy reminder
@@ -78,5 +80,5 @@ var _i = setInterval(function() {
 		if (c == 300)
 			clearInterval(i);
 	
-	}, 500);
-}, 500);
+	}, 250 + c*10);
+}, 250);

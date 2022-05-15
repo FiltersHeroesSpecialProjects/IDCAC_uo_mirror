@@ -4,7 +4,8 @@
 		'.wp-exclude-emoji': [
 			'div[id^="bnnr"] > div[style*="; order: 1"] span',
 			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 2"] span',
-			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"]'
+			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"][style*="underline"] span',
+			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"]:not([style*="underline"])'
 		],
 		
 		'#usercentrics-root': [
@@ -21,7 +22,7 @@
 		],
 		
 		'.message-container': [
-			'button.sp_choice_type_12',
+			'button.sp_choice_type_12:not(.cmp-no-pur-privacy-btn)',
 			'.sp_choice_type_SAVE_AND_EXIT',
 			'div:not(.header) > .sp_choice_type_11:only-of-type:not(:only-child)'
 		],
@@ -33,7 +34,9 @@
 			'#cookiebanner .confirmSelection',
 			'#cookieConsent .btn[data-cookie="accepted"]',
 			'.avia-cookie-close-bar',
-			'.cookies-save-and-close-btn'
+			'.cookies-save-and-close-btn',
+			'a[onclick*="SaveCookieSettings"]',
+			'.cookie-consent .accept-selection'
 		],
 		
 		'.reveal-overlay[style*="block"]': [
@@ -92,7 +95,9 @@
 			'#cookiesplus-bas[style*="block"] .btn[name="save-basic"]',
 			'#mndCookieModal[style*="block"] ~ .modal .mnd-btn-save-settings',
 			'#modal-cookie-notice[style*="block"] .accept-settings',
-			'.modal.show button[id*="cookie-consent-accept-selected"]'
+			'.modal.show button[id*="cookie-consent-accept-selected"]',
+			'#cookie-manager-window[style*="block"] #accept-selected',
+			'.ck-user-cookie-consent-modal #js-save-cookie-settings'
 		],
 		
 		'.modal[style*="block"]': [
@@ -120,6 +125,7 @@
 			'button[data-tracking="ACCEPT_REQUIRED_COOKIES"]',
 			'#aceptarCookiesObligatorias',
 			'.btn[href="#cookieman-settings"]',
+			'.btn[data-target="#cookieman-settings"]',
 			'[data-cookieman-settings-trigger-button]',
 			'[data-cookieman-save]:not([data-cookieman-accept-all]):not([style*="none"])',
 			'.cookie-manager-save',
@@ -145,14 +151,20 @@
 			'#cookieconsent_essentiell',
 			'#button-cookie-individual-save',
 			'#cookiesModalRefuse',
-			'#declineCookieButton'
+			'#declineCookieButton',
+			'.btn-cookies-save',
+			'.ModalCookies__deny',
+			'.gdcc-save-consent[data-gdcc-select="-"]',
+			'#cookies-modal-save',
+			'.btn[form*="trocookie"][value*="save"]',
+			'.js-declineAllCookies'
 		]
 	};
 	
 	let searchGroups = [
 		'.qc-cmp2-summary-buttons button[mode="secondary"],\
 		.qc-cmp2-buttons-desktop > button:first-child,\
-		#didomi-popup .didomi-button-highlight:not([class*="paywall"]),\
+		#didomi-popup .didomi-button-highlight:not([class*="paywall"]):not([class*="disagree"]),\
 		#CookieModal.in .btn[data-dismiss],\
 		#rgpd_video .rgpd-mask a[data-rgpd-consent],\
 		.js--modal[style*="block"] .cookie-permission--accept-button,\
@@ -274,7 +286,6 @@
 		.cookie_btn_accept_all,\
 		button#cookies-accept-button,\
 		#cmp-message .cmp-button[onclick*="cookieAccept"],\
-		#ppms_cm_agree-to-all,\
 		.template-gdpr .gdpr[data-api*="onetrust.com"] .gdpr-form .btn,\
 		.dialog .cookie-banner__btn-accept,\
 		button#btn-accept-consent,\
@@ -287,7 +298,7 @@
 		#js-gdpr-accept:not(.cta),\
 		.ck-modal--cookieModalMain .ck-Button__primary,\
 		.ReactModal__Overlay--after-open .cookie-notice button + button,\
-		.ReactModal__Overlay--after-open .UPM__PrivacyModal button[type="submit"],\
+		.ReactModal__Overlay--after-open .UPM__PrivacyModal span + div > span:first-child button,\
 		.privacyInformationDiv .cookie-agree,\
 		.modal.fade.in #acceptCookie,\
 		.button[value="accept-all"][data-gtm="basic-consent/accept-all/button"],\
@@ -466,9 +477,9 @@
 								
 								button.click();
 								
-								setTimeout(function() {
-									if (button) button.click();
-								}, 500);
+								// The 2nd click is just to be sure. Avoid when a double click breaks the process.
+								if (selector != '.message-container')
+									setTimeout(function() { if (button) button.click(); }, 500);
 								
 								timeoutDuration += 500;
 							}
@@ -505,10 +516,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_338/.test(html.className))
+		if (!html || /idc0_340/.test(html.className))
 			return;
 		
-		html.className += ' idc0_338';
+		html.className += ' idc0_340';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);

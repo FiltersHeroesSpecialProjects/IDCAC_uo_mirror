@@ -87,20 +87,11 @@ function getE(h)
 		case 'onmsft.com': return ['euconsent=1'];
 		case 'modelle-hamburg.de': return ['privacypolicy1=1'];
 		case 'lubimyczytac.pl': return ['rodoInfo_v_11=1'];
-		case 'fightful.com': return ['gdpr_popup_hide=checked'];
 		case 'foodetective.co': return ['cookiesAgreement=accepted'];
-		case 'hrkgame.com': return ['gdpralert=done'];
-		case 'quandoo.at': return ['quandoo_cookie_policy=accepted'];
-		case 'grouperf.com': return ['cookie_rgpd=1']; // subdomains
 		case 'insidebruegel.net': return ['InsideBruegel=init'];
-		case 'szukajwarchiwach.pl': return ['info_closed=1'];
-		case 'jow.fr': return ['CNIL=OK'];
 		case 'dwell.com': return ['gdpr=1'];
-		case 'global.brother': return ['popup-cookie-disabled=yes'];
 		case 'telecinco.es': return ['ms_cookies_alert_accepted=true'];
-		case 'klassikradio.de': return ['CookiePolicyAccepted=true'];
 		case 'euroclear.com': return ['cc_necessary=true', 'cc_functional=true', 'cc_analytics=true'];
-		case 'sfendocrino.org': return ['name1=the_cookie'];
 		case 'appi.org': return ['apa_gdpr_accepted=True'];
 		case 'agroneo.com': return ['consent=yes'];
 		case 'doc.fr': return ['cookieAgreement=True'];
@@ -130,12 +121,10 @@ function getE(h)
 		case 'kitchenplanner.ikea.com': return ['EnableGlobalLicenseAgreement=2015-04-01', 'HideCookieAgreementBanner=true'];
 		case 'atro-provita.de': return ['cookieconsent=true'];
 		case 'unicheck.com': return ['unicheck-accepted-cookies=true'];
-		case 'meteoblue.com': return ['privacysettings=["required"]'];
 		case 'gberardi.com': return ['cookie_notify=true'];
 		case 'choiceandmedication.org': return ['rgwp_acceptedCookie=1'];
 		case 'fiaworldrallycross.com': return ['privacyupdate=1'];
 		case 'pansci.asia': return ['panNotiBarCookie=1'];
-		case 'business.google.com': return ['isCookieWarningAccepted=true']; // e
 		case 'willitclassic.com': return ['GDPR:accepted=true'];
 		case 'byggshop.se': return ['showCookieWarning=false'];
 		case 'blockstack.org': return ['cookiesBanner=ACCEPTED'];
@@ -247,9 +236,8 @@ function getE(h)
 		case 'ersatzteilshop.de': return ['cookie-preference=1'];
 		case 'svenskaspel.se': return ['cookie_consent={\"ad\":false,\"personalized\":false,\"analytics\":false,\"provision\":false,\"version\":2}'];
 		case 'restegourmet.de': return ['consent_accepted=1'];
-		case 'cire.pl': return ['APP_COOKIES_POLICY=true', 'APP_COOKIES_TERMS_AND_CONDITIONS=true'];
-		case 'x-kom.pl': return ['trackingPermissionValueCookie=false'];
 		case 'sachsenenergie.de': return ['cookiesAccepted=true'];
+		case 'cire.pl': return ['APP_A_COOKIES_TERMS_AND_CONDITIONS=true', 'APP_A_COOKIES_FUNCTIONAL=false', 'APP_A_COOKIES_PERFORMANCE=false', 'APP_A_COOKIES_MARKETING=false', 'APP_A_COOKIES_POLICY=true'];
 	}
 	
 	
