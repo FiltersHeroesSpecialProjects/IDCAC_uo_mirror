@@ -73,10 +73,6 @@ function getE(h)
 		case 'elopage.com':
 			return ['p_consent_accepted_shop=1%2C2'];
 		
-		case 'g2a.com':
-		case 'g2a.co':
-			return ['gdpr_cookie=%5B%5D'];
-		
 		case 'elvenar.com':
 		case 'forgeofempires.com':
 			return ['CookieNotification=1'];
@@ -84,7 +80,6 @@ function getE(h)
 		case 'finantia.com': return ['finantia_cookie=active'];
 		case 'finantia.es': return ['strictly_necessary=active'];
 		case 'domhouse.pl': return ['rodo=1'];
-		case 'onmsft.com': return ['euconsent=1'];
 		case 'modelle-hamburg.de': return ['privacypolicy1=1'];
 		case 'lubimyczytac.pl': return ['rodoInfo_v_11=1'];
 		case 'foodetective.co': return ['cookiesAgreement=accepted'];

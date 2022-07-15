@@ -4,7 +4,8 @@
 		'.wp-exclude-emoji': [
 			'div[id^="bnnr"] > div[style*="; order: 1"] span',
 			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 2"] span',
-			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"][style*="underline"] span',
+			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 3"] span',
+			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 3"][style*="underline"] span',
 			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"]:not([style*="underline"])'
 		],
 		
@@ -36,13 +37,15 @@
 			'.avia-cookie-close-bar',
 			'.cookies-save-and-close-btn',
 			'a[onclick*="SaveCookieSettings"]',
-			'.cookie-consent .accept-selection'
+			'.cookie-consent .accept-selection',
+			'#cookie-consent .btn[name*="necessary"]'
 		],
 		
 		'.reveal-overlay[style*="block"]': [
 			'[data-cookieman-save]:not([data-cookieman-accept-all]):not(.hide)',
 			'#CookieModalStrictOnlyLink',
-			'#dsgvoLayer[style*="block"] #dsgvo_deny'
+			'#dsgvoLayer[style*="block"] #dsgvo_deny',
+			'#cookies #c-deny'
 		],
 		
 		'.cc-window:not(.cc-invisible)': [
@@ -68,7 +71,8 @@
 		],
 		
 		'.fancybox-is-open': [
-			'#cookie-consent .cc-page-2 #cc-set-cookie'
+			'#cookie-consent .cc-page-2 #cc-set-cookie',
+			'.consent-modal .btn[data-action="save-preferences"]'
 		],
 		
 		'.pum-open': [
@@ -97,7 +101,8 @@
 			'#modal-cookie-notice[style*="block"] .accept-settings',
 			'.modal.show button[id*="cookie-consent-accept-selected"]',
 			'#cookie-manager-window[style*="block"] #accept-selected',
-			'.ck-user-cookie-consent-modal #js-save-cookie-settings'
+			'.ck-user-cookie-consent-modal #js-save-cookie-settings',
+			'#cookie-consent-modal[style*="block"] ~ .modal #cc-save-preferences'
 		],
 		
 		'.modal[style*="block"]': [
@@ -144,7 +149,6 @@
 			'.b-cookie-consent .js-cookie-decline',
 			'.cookie-consent-option-icon[ng-click*="required"]',
 			'#saveCookieOnlyMandatory',
-			'#privacycard-options #accsel',
 			'.js-accept-necessary-btn',
 			'#cookies-reject-btn',
 			'.cookie-accept-selection',
@@ -157,7 +161,12 @@
 			'.gdcc-save-consent[data-gdcc-select="-"]',
 			'#cookies-modal-save',
 			'.btn[form*="trocookie"][value*="save"]',
-			'.js-declineAllCookies'
+			'.js-declineAllCookies',
+			'#cookie-notification .saveselection',
+			'.button-aceptar-configuracion-cookies',
+			'.save-cookie-settings',
+			'#btnCookieNecessary',
+			'.btn.cookies-decline'
 		]
 	};
 	
@@ -516,10 +525,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_340/.test(html.className))
+		if (!html || /idc0_341/.test(html.className))
 			return;
 		
-		html.className += ' idc0_340';
+		html.className += ' idc0_341';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);
