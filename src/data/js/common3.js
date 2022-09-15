@@ -23,8 +23,8 @@ function getItem(h)
 		
 		case 'klarna.com':
 			return [
-				{strict: true, key: 'trackingConsentAnalyticsKey', value: 'false'},
-				{strict: true, key: 'trackingConsentMarketingKey', value: 'false'}
+				{strict: true, key: 'safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey', value: 'KEEP_ALWAYS;;false'},
+				{strict: true, key: 'safe-storage/v1/tracking-consent/trackingConsentMarketingKey', value: 'KEEP_ALWAYS;;false'}
 			];
 		
 		case 'krant.volkskrant.nl':

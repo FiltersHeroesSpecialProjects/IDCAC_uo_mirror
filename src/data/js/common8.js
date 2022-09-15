@@ -10,12 +10,12 @@ function _id(s) {
 var _i = setInterval(function() {
 	var html = _sl('html');
 	
-	if (!html || /idc8_341/.test(html.className))
+	if (!html || /idc8_342/.test(html.className))
 		return;
 	
 	clearInterval(_i);
 	
-	html.className += ' idc8_341';
+	html.className += ' idc8_342';
 	
 	var c = 0, l = document.location, i = setInterval(function() {
 		
@@ -25,19 +25,22 @@ var _i = setInterval(function() {
 			if (l.pathname == '/m') {
 				e = _sl('form[action*="//consent."][action$="/s"] button, form[action*="//consent."][action$="/save"] button');
 				
-				if (e)
+				if (e) {
 					e.click();
+					c = 299;
+				}
 			}
 			
 			
-			// Being displayed occasionally. A/B testing?
-			// https://wap.google.com/search?q=test&gl=nl&hl=nl&gbv=2&ucbcb=1&ei=RGMPYdWdL_-F9u8Pg5a3mAI
+			// Mobile only, ie google.co.uk (or in FF Nightly, on google.com search results)
 			
 			else if (l.pathname == '/ml') {
-				e = _sl('form[action*="//consent."][action$="/s"] .button');
+				e = _sl('.saveButtonContainerNarrowScreen > form:last-child .button');
 				
-				if (e)
+				if (e) {
 					e.click();
+					c = 299;
+				}
 			}
 		}
 		

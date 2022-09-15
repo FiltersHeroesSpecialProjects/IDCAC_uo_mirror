@@ -5,7 +5,7 @@
 			'div[id^="bnnr"] > div[style*="; order: 1"] span',
 			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 2"] span',
 			'div[id^="bnnr"]:not([style*="float"]) > div[style*="; order: 0"] + div[style*="; order: 3"] span',
-			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 3"][style*="underline"] span',
+			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"][style*="underline"] span',
 			'div[id^="bnnr"][style*="float"] > div[style*="; order: 0"] + div[style*="; order: 2"]:not([style*="underline"])'
 		],
 		
@@ -166,7 +166,8 @@
 			'.button-aceptar-configuracion-cookies',
 			'.save-cookie-settings',
 			'#btnCookieNecessary',
-			'.btn.cookies-decline'
+			'.btn.cookies-decline',
+			'#cookieConsentConfigBtnDecline'
 		]
 	};
 	
@@ -258,6 +259,7 @@
 		#consent-modal[style*="block"] .lm_modal__modal__content__body__buttons__ok,\
 		.cookiesOverlay3Box #cookiesConsentOK,\
 		.bemCookieOverlay--activePopup .bemCookieOverlay__btn--save,\
+		#root main ~ div [data-gi-selector="reject-all-cookies"] ~ div a,\
 		#cookieNoticeModal.vrm-reveal[style*="block"] .vrm-reveal__icon--close',
 		
 		'#cookie-modal.in .btn[onclick*="setCookie"],\
@@ -525,10 +527,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_341/.test(html.className))
+		if (!html || /idc0_342/.test(html.className))
 			return;
 		
-		html.className += ' idc0_341';
+		html.className += ' idc0_342';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);
