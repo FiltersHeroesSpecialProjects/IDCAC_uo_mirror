@@ -260,6 +260,7 @@
 		.cookiesOverlay3Box #cookiesConsentOK,\
 		.bemCookieOverlay--activePopup .bemCookieOverlay__btn--save,\
 		#root main ~ div [data-gi-selector="reject-all-cookies"] ~ div a,\
+		.cookies-management .cookies-deny,\
 		#cookieNoticeModal.vrm-reveal[style*="block"] .vrm-reveal__icon--close',
 		
 		'#cookie-modal.in .btn[onclick*="setCookie"],\
@@ -527,10 +528,10 @@
 	var start = setInterval(function() {
 		var html = document.querySelector('html');
 		
-		if (!html || /idc0_342/.test(html.className))
+		if (!html || /idc0_343/.test(html.className))
 			return;
 		
-		html.className += ' idc0_342';
+		html.className += ' idc0_343';
 		searchLoop(0);
 		clearInterval(start);
 	}, 500);

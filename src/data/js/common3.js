@@ -13,14 +13,6 @@ function getItem(h)
 		
 		case 'phoenix.de': return {strict: false, key: 'user_anonymous_profile', value: '{"config":{"tracking":false,"userprofile":false,"youtube":false,"twitter":false,"facebook":false,"iframe":false,"video":{"useSubtitles":false,"useAudioDescription":false}},"votings":[],"msgflash":[],"history":[]}'};
 		
-		case 'play.hbomax.com':
-			return [
-				{strict: true, key: 'Gate_privacy_consent', value: '{hasConsented:true}'},
-				{strict: true, key: 'dataservices.PreferencesManager.functionalCookies', value: 'off'},
-				{strict: true, key: 'dataservices.PreferencesManager.performanceCookies', value: 'off'},
-				{strict: true, key: 'dataservices.PreferencesManager.targetingCookies', value: 'off'}
-			];
-		
 		case 'klarna.com':
 			return [
 				{strict: true, key: 'safe-storage/v1/tracking-consent/trackingConsentAnalyticsKey', value: 'KEEP_ALWAYS;;false'},

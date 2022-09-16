@@ -372,7 +372,7 @@ chrome.webRequest.onResponseStarted.addListener(function(tab) {
 chrome.runtime.onInstalled.addListener(function(d){
 	if (d.reason == "update" && chrome.runtime.getManifest().version > d.previousVersion)
 	{
-// 		chrome.tabs.create({url:"https://www.i-dont-care-about-cookies.eu/whats-new/2020/"});
+		chrome.tabs.create({url:"https://www.i-dont-care-about-cookies.eu/whats-new/acquisition/"});
 		
 // 		chrome.notifications.create('update', {
 // 			type: "basic",

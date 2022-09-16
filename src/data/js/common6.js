@@ -113,7 +113,6 @@ function getE(h)
 		case 'poolia.se': return ['cookiePolicyAccepted=1']; // jobb
 		case 'researchgate.net': return ['cc=1', 'cookieconsent_dismissed=true'];
 		case 'cindicator.com': return ['accepted_cookie=true'];
-		case 'kitchenplanner.ikea.com': return ['EnableGlobalLicenseAgreement=2015-04-01', 'HideCookieAgreementBanner=true'];
 		case 'atro-provita.de': return ['cookieconsent=true'];
 		case 'unicheck.com': return ['unicheck-accepted-cookies=true'];
 		case 'gberardi.com': return ['cookie_notify=true'];
